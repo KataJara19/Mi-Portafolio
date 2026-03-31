@@ -1,0 +1,622 @@
+:root {
+    --primary-bg: #fdfdfd;      
+    --secondary-bg: #f1efed;   
+    --main-text: #3a2220;    
+    --accent-color: #442404; 
+    --white: #ffffff;
+
+    --heading-font: 'EB Garamond', serif;
+    --body-font: 'Inter', sans-serif;
+
+    --base-transition: all 0.4s ease-in-out;
+    --nav-color: #634a48;
+}    
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--main-text);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+main {
+    padding: 40px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - 170px); /* Ajuste para que el footer no suba mucho */
+    animation: fadeIn 0.6s ease-out; /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* la CABECERA*/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 85px;
+    padding: 0 5%;
+
+    background-color: rgba(74, 44, 42, 0.9);
+    backdrop-filter: blur(10px);
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 65px; 
+    width: auto;
+    transition: var(--base-transition);
+}
+
+.marca {
+    text-align: right; 
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+}
+
+.marca h1 {
+    font-family: var(--heading-font);
+    font-size: 1.6rem;
+    color: var(--white); 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    color: #ffcdb2; /* Naranja pastel/melocotón para contrastar sobre el fondo oscuro */
+    font-style: italic;
+}
+
+/* 4. NAVEGACIÓN  */
+
+nav {
+    background-color: var(--white); 
+    padding: 0.8rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--secondary-bg);
+}
+
+nav ul {
+    list-style: none; 
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem; 
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    
+    color: var(--nav-color); 
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none; 
+    
+    
+    position: relative; 
+    padding: 5px 0;
+    transition: var(--base-transition);
+}
+
+nav a::after { 
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--main-text);
+    transition: var(--base-transition);
+    transform: translateX(-50%);
+}
+
+
+nav a:hover { 
+    color: var(--main-text); 
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.active { 
+    color: var(--main-text);
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+
+/*  #INICIO INDEX */
+
+#inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 60vh; /* Espacio vertical para que el contenido respire */
+    padding: 2rem 0;
+}
+
+.hero-content h2 {
+    font-family: var(--heading-font);
+    font-size: 3rem; /* Tamaño prominente para tu nombre */
+    color: var(--main-text);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.intro-text {
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    color: var(--main-text);
+    opacity: 0.85;
+}
+
+
+.intro-text strong {
+    color: var(--main-text);
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-principal, .btn-secundario {
+    padding: 14px 35px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: var(--base-transition);
+    display: inline-block;
+}
+
+
+.btn-principal {
+    background-color: var(--main-text);
+    color: var(--white);
+    border: 1px solid var(--main-text);
+}
+
+.btn-principal:hover {
+    background-color: transparent;
+    color: var(--main-text);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--main-text);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-secundario:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/*  SOBRE MI */
+
+.perfil-contenedor {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Para que en celulares la foto se ponga arriba del texto */
+    margin-top: 30px;
+}
+
+
+.foto-perfil { /* Estilo de la Foto */
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.foto-perfil img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-bg);
+}
+
+.foto-perfil figcaption {
+    margin-top: 10px;
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+
+.biografia { /* Estilo de la Biografía */
+    flex: 2;
+    min-width: 300px;
+}
+
+.biografia h3 {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--main-text);
+}
+
+.biografia p {
+    margin-bottom: 20px;
+}
+
+
+.linea-tiempo { /* Listas de Intereses y Línea de Tiempo */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+}
+
+.linea-tiempo ol {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    /* Una línea simple gris que atraviesa los puntos */
+    border-top: 2px solid var(--accent-color); 
+}
+
+.linea-tiempo li {
+    padding-top: 15px;
+    position: relative;
+    text-align: center;
+    flex: 1;
+    transition: var(--base-transition);
+}
+
+/* La bolita de la línea */
+.linea-tiempo li::before {
+    content: "";
+    position: absolute;
+    top: -9px; /* Coloca la bolita justo encima de la línea */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background-color: var(--white);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    transition: var(--base-transition);
+}
+
+
+.linea-tiempo li:hover { /* Efecto al pasar el mouse */
+    transform: translateY(-5px);
+}
+
+.linea-tiempo li:hover::before {
+    background-color: var(--main-text);
+    border-color: var(--main-text);
+}
+
+.intereses {
+    margin-top: 60px; /* Espacio extra para que no se pegue a la línea de tiempo */
+    padding: 20px;
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+}
+
+/* POrtafolio */
+
+.proyectos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.proyecto-card {
+    background-color: var(--white);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 8px;
+    overflow: hidden; /* Corta lo que sobresalga de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    transition: var(--base-transition);
+}
+
+.proyecto-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(74, 44, 42, 0.05);
+}
+
+/* Forzar que todas las imágenes midan lo mismo sin deformarse */
+.proyecto-visual figure img {
+    width: 100%;
+    height: 200px; /* Altura fija para todas */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin estirarse */
+    display: block;
+}
+
+.proyecto-info {
+    padding: 20px;
+    flex-grow: 1; /* Hace que el contenido ocupe el espacio sobrante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.proyecto-info h3 {
+    font-family: var(--heading-font);
+    color: var(--main-text);
+    margin-bottom: 10px;
+}
+
+.proyecto-info p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.github-link {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.github-link:hover {
+    color: var(--main-text);
+}
+
+/* Estilo especial para el Proyecto Estrella */
+.proyecto-card.destacado {
+    border: 2px solid var(--accent-color);
+}
+
+.estrella {
+    color: #d4af37; /* Color dorado sutil para la estrella */
+    margin-right: 5px;
+}
+
+
+/* Certificadosss */
+
+.certificados-grid {
+    display: grid;
+    /* Crea columnas automáticas de al menos 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-block-start: 2rem;
+}
+
+.certificado-item {
+    background: var(--white);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: var(--base-transition);
+    margin: 0; /* Reseteo de margin por defecto de figure */
+}
+
+.certificado-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-4px);
+}
+
+/* Contenedor de la imagen para asegurar uniformidad */
+.img-wrapper {
+    width: 100%;
+    height: 200px; /* Altura fija para el contenedor */
+    background-color: #f9f9f9; /* Fondo muy suave por si la imagen no llena todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1rem; /* Espacio para que la imagen no toque los bordes */
+}
+
+.img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    /* CLAVE: Mantiene proporción sin cortar, ideal para mezcla vertical/horizontal */
+    object-fit: contain; 
+}
+
+.certificado-item figcaption {
+    padding: 1.5rem;
+    text-align: center;
+    flex-grow: 1; /* Para alinear los textos si varían en longitud */
+}
+
+.certificado-item h3 {
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    color: var(--main-text);
+    margin-block-end: 0.5rem;
+}
+
+.certificado-item figcaption p {
+    font-size: 0.85rem;
+    color: var(--main-text);
+    opacity: 0.8;
+}
+
+
+
+/* Contacto */
+
+#contacto {
+    text-align: center;
+    max-width: 550px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+}
+
+#contacto h2 {
+    font-size: 1.8rem;
+    margin-block-end: 2rem;
+}
+
+.contacto-lista {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Etiqueta a la izquierda, link a la derecha */
+    gap: 1rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Alineamos el contenido interno a la izquierda */
+}
+
+.contacto-lista li {
+    display: contents; /* Truco MDN: hace que el 'li' no afecte al grid */
+}
+
+.contacto-lista strong {
+    font: 600 0.8rem var(--body-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    align-self: center;
+}
+
+.contacto-lista a {
+    color: var(--main-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--base-transition);
+}
+
+.contacto-lista a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+
+/* AsidW 8 */
+
+aside {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--secondary-bg);
+    margin-block: 3rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+aside h3 {
+    font-family: var(--body-font);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--main-text);
+    margin-block-end: 1rem;
+}
+
+/* Barras de Progreso */
+progress {
+    width: 100%;
+    height: 6px;
+    appearance: none;
+    border: none;
+    background: var(--white);
+    border-radius: 10px;
+    display: block;
+    margin-block: 0.5rem;
+}
+
+progress::-webkit-progress-value { 
+    background: var(--main-text); 
+    border-radius: 10px; 
+}
+
+/* Stack */
+.tags-skills,.tags-skills ul {
+    list-style: none;
+    padding-inline-start: 1rem;
+    color: var(--accent-color);
+}
+
+.tags-skills > li {
+    border-left: 2px solid var(--accent-color);
+    padding-inline-start: 10px;
+    margin-block-end: 0.8rem;
+}
+
+.tags-skills ul {
+    font-size: 0.85rem; 
+    margin-block-start: 0.4rem;
+}
+
+.tags-skills strong {
+    color: var(--accent-color);
+}
+
+/* Foota */
+footer {
+    background: var(--main-text);
+    color: var(--white);
+    padding: 3rem 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+footer p:first-of-type {
+    font: italic 1.2rem var(--heading-font);
+    margin-block-end: 0.5rem;
+}
+
+address {
+    font-style: normal;
+    opacity: 0.6;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+
