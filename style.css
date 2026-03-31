@@ -34,7 +34,7 @@ main {
     padding: 40px 8%;
     max-width: 1200px;
     margin: 0 auto;
-    min-height: calc(100vh - 170px); /* Ajuste para que el footer no suba mucho */
+    min-height: calc(100vh - 170px); 
     animation: fadeIn 0.6s ease-out; /* Animación de entrada */
 }
 
@@ -89,7 +89,7 @@ header {
 
 .tagline {
     font-size: 0.8rem;
-    color: #ffcdb2; /* Naranja pastel/melocotón para contrastar sobre el fondo oscuro */
+    color: #ffcdb2; 
     font-style: italic;
 }
 
@@ -163,13 +163,13 @@ nav a.active::after {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 60vh; /* Espacio vertical para que el contenido respire */
+    min-height: 60vh; 
     padding: 2rem 0;
 }
 
 .hero-content h2 {
     font-family: var(--heading-font);
-    font-size: 3rem; /* Tamaño prominente para tu nombre */
+    font-size: 3rem; 
     color: var(--main-text);
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
@@ -334,7 +334,7 @@ nav a.active::after {
 }
 
 .intereses {
-    margin-top: 60px; /* Espacio extra para que no se pegue a la línea de tiempo */
+    margin-top: 60px; 
     padding: 20px;
     background-color: var(--secondary-bg);
     border-radius: 8px;
@@ -353,7 +353,7 @@ nav a.active::after {
     background-color: var(--white);
     border: 1px solid var(--secondary-bg);
     border-radius: 8px;
-    overflow: hidden; /* Corta lo que sobresalga de la tarjeta */
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
     transition: var(--base-transition);
@@ -365,17 +365,17 @@ nav a.active::after {
     box-shadow: 0 10px 20px rgba(74, 44, 42, 0.05);
 }
 
-/* Forzar que todas las imágenes midan lo mismo sin deformarse */
+
 .proyecto-visual figure img {
     width: 100%;
-    height: 200px; /* Altura fija para todas */
-    object-fit: cover; /* Recorta la imagen para que llene el espacio sin estirarse */
+    height: 200px; 
+    object-fit: cover; 
     display: block;
 }
 
 .proyecto-info {
     padding: 20px;
-    flex-grow: 1; /* Hace que el contenido ocupe el espacio sobrante */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -404,13 +404,13 @@ nav a.active::after {
     color: var(--main-text);
 }
 
-/* Estilo especial para el Proyecto Estrella */
+
 .proyecto-card.destacado {
     border: 2px solid var(--accent-color);
 }
 
 .estrella {
-    color: #d4af37; /* Color dorado sutil para la estrella */
+    color: #d4af37; 
     margin-right: 5px;
 }
 
@@ -433,7 +433,7 @@ nav a.active::after {
     flex-direction: column;
     overflow: hidden;
     transition: var(--base-transition);
-    margin: 0; /* Reseteo de margin por defecto de figure */
+    margin: 0; 
 }
 
 .certificado-item:hover {
@@ -441,29 +441,28 @@ nav a.active::after {
     transform: translateY(-4px);
 }
 
-/* Contenedor de la imagen para asegurar uniformidad */
+
 .img-wrapper {
     width: 100%;
-    height: 200px; /* Altura fija para el contenedor */
-    background-color: #f9f9f9; /* Fondo muy suave por si la imagen no llena todo */
+    height: 200px; 
+    background-color: #f9f9f9; 
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 1rem; /* Espacio para que la imagen no toque los bordes */
+    padding: 1rem; 
 }
 
 .img-wrapper img {
     max-width: 100%;
     max-height: 100%;
-    /* CLAVE: Mantiene proporción sin cortar, ideal para mezcla vertical/horizontal */
     object-fit: contain; 
 }
 
 .certificado-item figcaption {
     padding: 1.5rem;
     text-align: center;
-    flex-grow: 1; /* Para alinear los textos si varían en longitud */
+    flex-grow: 1; 
 }
 
 .certificado-item h3 {
@@ -499,15 +498,15 @@ nav a.active::after {
 
 .contacto-lista {
     display: grid;
-    grid-template-columns: auto 1fr; /* Etiqueta a la izquierda, link a la derecha */
+    grid-template-columns: auto 1fr; 
     gap: 1rem 1.5rem;
     list-style: none;
     padding: 0;
-    text-align: left; /* Alineamos el contenido interno a la izquierda */
+    text-align: left; 
 }
 
 .contacto-lista li {
-    display: contents; /* Truco MDN: hace que el 'li' no afecte al grid */
+    display: contents; 
 }
 
 .contacto-lista strong {
@@ -553,7 +552,7 @@ aside h3 {
     margin-block-end: 1rem;
 }
 
-/* Barras de Progreso */
+/* Barras Progreso */
 progress {
     width: 100%;
     height: 6px;
